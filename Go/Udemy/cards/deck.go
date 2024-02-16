@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+	"io/ioutil"
+	
 )
 
 // Create a new type of deck which is a slice of string
@@ -36,7 +38,14 @@ func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
 }
 
-func (d deck) saveToFile() {
-	greeting := "Hi There"
-	fmt.Println([]byte(greeting))
+func (d deck) saveToFile(fileName string) error {
+	return ioutil.WriteFile(fileName,[]byte(d.toString()),0666)
+}
+
+func loadDeckFromFile(fileName string) deck {
+     bs,err :=ioutil.ReadFile(fileName)
+	 if err != nil {
+		fmt.Println("Error:",err)
+		os.
+	 }
 }
