@@ -5,8 +5,9 @@ import "fmt"
 func main() {
 	cards := newDeck()
 	hand, remainingCards := deal(cards, 5)
-	hand.print()
-	fmt.Println("******************")
 	remainingCards.print()
-	print(hand.toString())
+	fmt.Println("********************************************************")
+	println(hand.toString())
+	hand.shuffle().shuffle().print()
+	fmt.Println("********************************************************")
 }
